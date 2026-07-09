@@ -62,6 +62,11 @@ fn main() {
             Unsigned Integers:
                 u8, u16, u32, u64, u128 & usize (pointer size)
             
+            Signed/Unsigned refer to whether its possible for a number to be negative
+            Signed = number needs to have a sign with it
+            Unsigned = number does not need to have a sign with it
+                And will only ever be positive
+
             Floating Point:
                 f32, f64
             
