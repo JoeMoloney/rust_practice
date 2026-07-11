@@ -26,6 +26,22 @@ impl fmt::Display for Point2D {
     }
 }
 
+// Activity
+#[derive(Debug)]
+struct Complex {
+    real: f32,
+    imag: f32,
+}
+
+// Implement Display for Complex
+impl fmt::Display for Complex {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}, {}",
+            self.real, self.imag
+        )
+    }
+}
+
 fn main() {
     let minmax = MinMax(0, 14);
 
@@ -43,10 +59,17 @@ fn main() {
     );
 
     let point = Point2D {x: 3.3, y: 7.2};
-
+    
     println!("Compare points:
     \nDisplay: {}
     \nDebug: {:?}
     ", point, point);
+    
+    let complex = Complex {real: 3.3, imag: 7.2};
+    println!("Display: Complex: {:+}
+    \nDebug: {:?}", complex, complex);
 
+    let complex = Complex {real: 4.7, imag: -2.3};
+    println!("\nDisplay: Complex: {:+}
+    \nDebug: {:?}", complex, complex);
 }
