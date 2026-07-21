@@ -45,4 +45,19 @@ fn main() {
     let empty_array: [u32; 0] = [];
     assert_eq!(&empty_array, &[]);
     assert_eq!(&empty_array, &[][..]); // Same but more verbose
+
+    // Arrays can be safely accessed using '.get', which returns an 'Option'.
+    // This can be matched as shown below, or used with '.expect()' if you would like the program to exit with a nice message instead of happily continue
+    for i in 0..xs.len() + 1 { // One element too
+        match xs.get(i) {
+            Some(xval) => println!("i={}: xs={}", i, xval),
+            None => println!("Slow down! {} is too far!", i),
+        }
+    }
+
+    // Out of bound indexing on array with constant value causes compile time error
+    // println!("{}", xs[5]);
+    
+    // Out of bound indexing on slice causes runtime error
+    // println!("{}", xs[..][5]);
 }
