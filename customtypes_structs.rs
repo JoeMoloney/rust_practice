@@ -1,5 +1,7 @@
+
 // An attribute to hide warnings for unused code
 #![allow(dead_code)]
+use std::fmt;
 
 #[derive(Debug)]
 struct Person {
@@ -14,9 +16,15 @@ struct Unit;
 struct Pair(i32, f32);
 
 // A Struct with two fields
+#[derive(Clone)]
 struct Point {
     x: f32,
     y: f32,
+}
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Point: ({}, {})", self.x, self.y)
+    }
 }
 
 // Structs can be reused as fields of another struct
@@ -25,6 +33,11 @@ struct Rectangle {
     top_left: Point,
     bottom_right: Point,
 }
+impl fmt::Display for Rectangle {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Rectangle: ({}, {})", self.top_left, self.bottom_right)
+    }
+}
 
 // Activity 1/2
 fn rect_area(Rectangle {
@@ -32,6 +45,17 @@ fn rect_area(Rectangle {
     bottom_right: Point { x: brx, y: bry },
 }: &Rectangle,) -> f32 {
     (tlx - brx) * (tly - bry)
+}
+
+// Activity 2/2
+fn square(point: Point, width_height: f32) -> Rectangle {
+    Rectangle { 
+        top_left: point,
+        bottom_right: Point {
+            x: width_height,
+            y: width_height,
+        },
+    }
 }
 
 fn main() {
@@ -84,7 +108,10 @@ fn main() {
 
     let activity_point2 = Point { x: 5.0, y: 15.0 };
     
-    let activity_rectangle: Rectangle = Rectangle { top_left: activity_point1, bottom_right: activity_point2 };
+    let activity_rectangle: Rectangle = Rectangle { top_left: activity_point1.clone(), bottom_right: activity_point2 };
     
     println!("rect_area = {}", rect_area(&activity_rectangle));
+
+    // Activity 2/2
+    println!("Activity 2: Return Rectangle: {}", square(activity_point1, 20.0));
 }
