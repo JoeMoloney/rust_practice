@@ -28,6 +28,21 @@ fn inspect(event: WebEvent) {
     }
 }
 
+fn type_inspect(alias: VeryVerboseEnumOfThingsToDoWithNumbers) {
+    match alias {
+        VeryVerboseEnumOfThingsToDoWithNumbers::Add => println!("Add Enum"),
+        VeryVerboseEnumOfThingsToDoWithNumbers::Subtract => println!("Subtract Enum"),
+    }
+}
+
+// Type Aliases
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add, Subtract,
+}
+
+// Create a type alias
+type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
+
 fn main() {
     let pressed = WebEvent::KeyPress('x');
 
@@ -42,4 +57,9 @@ fn main() {
     inspect(click);
     inspect(load);
     inspect(unload);
+
+    let x_add = Operations::Add;
+    let x_subtract = Operations::Subtract;
+    type_inspect(x_add);
+    type_inspect(x_subtract);
 }
