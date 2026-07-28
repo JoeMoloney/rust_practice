@@ -39,6 +39,14 @@ fn type_inspect(alias: VeryVerboseEnumOfThingsToDoWithNumbers) {
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Add, Subtract,
 }
+impl VeryVerboseEnumOfThingsToDoWithNumbers {
+    fn run(&self, x: i32, y: i32) -> i32 {
+        match self {
+            Self::Add => x + y,
+            Self::Subtract => x -y,
+        }
+    }
+}
 
 // Create a type alias
 type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
@@ -62,4 +70,7 @@ fn main() {
     let x_subtract = Operations::Subtract;
     type_inspect(x_add);
     type_inspect(x_subtract);
+
+    println!("{}", VeryVerboseEnumOfThingsToDoWithNumbers::Add.run(10, 20));
+    println!("{}", VeryVerboseEnumOfThingsToDoWithNumbers::Subtract.run(100, 50));
 }
