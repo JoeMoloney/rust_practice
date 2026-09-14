@@ -15,3 +15,6 @@ To Run:
 
 ./FILENAME
 <hr>
+OR
+
+cargo run --bin FILENAME

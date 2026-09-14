@@ -1,0 +1,46 @@
+[package]
+name = "rust_practice"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "variablebindings"
+path = "src/variablebindings/variablebindings.rs"
+
+[[bin]]
+name = "helloworld"
+path = "src/helloworld/helloworld.rs"
+
+[[bin]]
+name = "primitives_scalartypes"
+path = "src/primitives/primitives_scalartypes.rs"
+
+[[bin]]
+name = "primitives_literalsandoperators"
+path = "src/primitives/primitives_literalsandoperators.rs"
+
+[[bin]]
+name = "primitives_arraysandslices"
+path = "src/primitives/primitives_arraysandslices.rs"
+
+[[bin]]
+name = "primitives_tuples"
+path = "src/primitives/primitives_tuples.rs"
+
+[[bin]]
+name = "constants_structs"
+path = "src/constants/customtypes_structs.rs"
+
+[[bin]]
+name = "constants_enums"
+path = "src/constants/customtypes_enums.rs"
+
+[[bin]]
+name = "constants_constants"
+path = "src/constants/customtypes_constants.rs"
+
+[[bin]]
+name = "display"
+path = "display.rs"
+
+[dependencies]
