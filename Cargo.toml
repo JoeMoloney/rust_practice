@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [[bin]]
+name = "scopeandshadowing"
+path = "src/variablebindings/scope_and_shadowing.rs"
+
+[[bin]]
 name = "mutability"
 path = "src/variablebindings/mutability.rs"
 
