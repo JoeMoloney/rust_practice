@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [[bin]]
+name = "declare_first"
+path = "src/variablebindings/declare_first.rs"
+
+[[bin]]
 name = "scopeandshadowing"
 path = "src/variablebindings/scope_and_shadowing.rs"
 
