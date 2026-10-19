@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [[bin]]
+name = "freezing"
+path = "src/variablebindings/freezing.rs"
+
+[[bin]]
 name = "declare_first"
 path = "src/variablebindings/declare_first.rs"
 
