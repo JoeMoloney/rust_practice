@@ -18,3 +18,5 @@ To Run:
 OR
 
 cargo run --bin FILENAME
+
+E.g. cargo run --bin declare_first
